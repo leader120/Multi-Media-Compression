@@ -17,8 +17,6 @@ struct Tree{
     char isleaf;
 };
 
-
-
 int H_selectMin(vector<double>& freq){
     double min1 = INT_MAX;
     int idx = -1;
