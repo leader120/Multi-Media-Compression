@@ -6,11 +6,36 @@
 //  Copyright © 2019 Alex. All rights reserved.
 //
 
-#include "Huffman_GS.hpp"
-#include "ShannonFano.hpp"
+#include "Homework1/ShannonFano.hpp"
+#include "Homework1/Huffman_GS.hpp"
+#include "Homework1/Huffman_adp.hpp"
 using namespace std;
 
 int main() {
-    SF_run("test_SF.txt");
+    char* t = "audio.ah";
+
+    /*
+    HA_run("audio.dat", "-c");
+    cout<<"file size: "<<FileSize(t)<<endl;
+    
+    HA_run("binary.dat", "-c");
+    t = "binary.ah";
+    cout<<"file size: "<<FileSize(t)<<endl;
+    
+    HA_run("image.dat", "-c");
+    t = "image.ah";
+    cout<<"file size: "<<FileSize(t)<<endl;
+    */
+    
+    t = "test_SF.txt";
+    cout<<"file size: "<<FileSize(t)<<endl;
+    
+    HA_run("test_SF.ah", "-d");
+    t = "test_SF.ah";
+    cout<<"file size: "<<FileSize(t)<<endl;
+    
+
+    
     return 0;
 }
+

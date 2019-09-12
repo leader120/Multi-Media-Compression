@@ -21,7 +21,7 @@ int H_selectMin(vector<double>& freq){
     double min1 = INT_MAX;
     int idx = -1;
     for(int i = 0; i < freq.size(); ++i){
-        if(freq[i] > 0 && freq[i] != 1 && freq[i] < min1){
+        if(freq[i] > 0.000000001 &&  freq[i] < min1){
             min1 = freq[i];
             idx = i;
         }
@@ -29,51 +29,45 @@ int H_selectMin(vector<double>& freq){
     return idx;
 }
 
-Tree* H_Buildtree(const vector<double>& freq, const vector<char>& dict){
+Tree* H_Buildtree(const vector<double>& freq, const vector<unsigned char>& dict){
     vector<double> tfreq(freq);
     vector<Tree*> tmp(dict.size(), NULL);
     int idx, idx1;
     int t = 0;
     while(1){
         idx = H_selectMin(tfreq);
-        if(idx == -1){
-            break;
-        }
         Tree* node = new Tree;
         Tree* n1 = new Tree;
         Tree* n2 = new Tree;
         if(tmp[idx] != NULL){
             n1 = tmp[idx];
-            node->left = n1;
         }
         else{
             n1->isleaf = dict[idx];
             n1->left = NULL;
             n1->right = NULL;
-            node->left = n1;
         }
+        node->left = n1;
         tfreq[idx] = tfreq[idx]-1;
         
         idx1 = H_selectMin(tfreq);
+        if(idx1 < 0){ t = idx;break;}
         if(tmp[idx1] != NULL){
             n2 = tmp[idx1];
-            node->right = n2;
         }
         else{
             n2->isleaf = dict[idx1];
             n2->left = NULL;
             n2->right = NULL;
-            node->right = n2;
         }
+        node->right = n2;
         node->isleaf = '0';
         //H_PrintBinaryDict(node);
-        tfreq[idx1] = tfreq[idx1]-1;
+        tfreq[idx1] = tfreq[idx1] - 1;
         tfreq[idx] = tfreq[idx] + tfreq[idx1] + 2;
-        t = idx;
         tmp[idx] = node;
         tmp[idx1] = NULL;
     }
-    
     return tmp[t];
 }
 
@@ -86,9 +80,7 @@ void H_PrintBinaryDict(Tree* head){
         for(int i(0); i < size; ++i){
             if(qu.front() != NULL){
                 cout<<qu.front()->isleaf<<"  ";
-                //if(qu.front()->left != NULL)
                 qu.push(qu.front()->left);
-                //if(qu.front()->right != NULL)
                 qu.push(qu.front()->right);
             }
             else{
@@ -100,7 +92,7 @@ void H_PrintBinaryDict(Tree* head){
     }
 }
 
-void H_ConvertTree(Tree* head, map<char, string>& mp, string code){
+void H_ConvertTree(Tree* head, map<unsigned char, string>& mp, string code){
     if(head == NULL){
         return;
     }
@@ -116,37 +108,62 @@ void H_ConvertTree(Tree* head, map<char, string>& mp, string code){
     }
 }
 
-map<char, string> H_CodingDict(const vector<char>& data){
+map<unsigned char, string> H_CodingDict(const vector<unsigned char>& data){
     vector<double> freq;
-    vector<char> dict;
+    vector<unsigned char> dict;
     GetStatics(data, freq, dict);
-    map<char, string> mp;
+    map<unsigned char, string> mp;
     Tree* head = H_Buildtree(freq, dict);
     string s;
+    //H_PrintBinaryDict(head);
     H_ConvertTree(head, mp, s);
+    double len = 0;
+    for(int i = 0; i < freq.size(); ++i){
+        len += freq[i]*((double)mp[dict[i]].length());
+    }
+    cout<<"Average code length: "<<len<<endl;
+
     return mp;
 }
 
-void H_encode(const vector<char>& data, map<char, string> mp, const string& name){
-    ofstream file("./"+name+"H_encode.dat");
+void H_encode(const vector<unsigned char>& data, map<unsigned char, string> mp, const string& name){
+    ofstream file("./"+name+"_H_encode.dat");
+    string tmp;
     for(int i = 0; i < data.size(); ++i){
-        file<<mp[data[i]];
+        tmp = tmp+mp[data[i]];
+        while(tmp.length() > 8){
+            int len = (int)tmp.length();
+            int x = 0;
+            for(int j = 0; j < 8; ++j){
+                int t = (tmp[j] == '0') ? 0 : 1;
+                x += pow(2,7-j)*t;
+            }
+            
+            file<<(char)x;
+            tmp = tmp.substr(8, len);
+        }
     }
+    int x = 0;
+    for(int j = 0; j < tmp.length(); ++j){
+        int t = tmp[j] == 0 ? 0 : 1;
+        x += pow(2,7-j)*t;
+    }
+    file<<(char)x;
 }
 
 void H_run(const string& name){
     ifstream f(name, ios_base::binary);
-    vector<char> v((istreambuf_iterator<char>(f)), istreambuf_iterator<char>());
+    vector<unsigned char> v((istreambuf_iterator<char>(f)), istreambuf_iterator<char>());
     if(v.size() <= 0){
         cout<<"Can not read File."<<endl;
         return;
-    }
-    map<char, string> mp = H_CodingDict(v);
-    map<char, string>::iterator it = mp.begin();
-    cout<<"Huffman encoding"<<endl;
+    } 
+    map<unsigned char, string> mp = H_CodingDict(v);
+    map<unsigned char, string>::iterator it = mp.begin();
+    cout<<"Huffman encoding dict:"<<endl;
     cout<<"   "<<"char"<<"  "<<"code"<<endl;
     while(it != mp.end()){
-        cout<<"  "<<it->first<<"   "<<it->second<<endl;
+        cout<<"    "<<(int)it->first<<"   "<<it->second<<endl;
         it++;
     }
     H_encode(v, mp, name);
