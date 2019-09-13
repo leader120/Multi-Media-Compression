@@ -162,10 +162,20 @@ void H_run(const string& name){
     map<unsigned char, string>::iterator it = mp.begin();
     cout<<"Huffman encoding dict:"<<endl;
     cout<<"   "<<"char"<<"  "<<"code"<<endl;
+    int c = 1;
     while(it != mp.end()){
-        cout<<"    "<<(int)it->first<<"   "<<it->second<<endl;
+        cout<<"    "<<(int)it->first<<" &  "<<it->second;
+        if(c==5){
+            c=0;
+            cout<<"\\\\"<<endl;
+        }
+        else{
+            cout<<"&";
+        }
+        c+=1;
         it++;
     }
+    cout<<endl;
     H_encode(v, mp, name);
 }
 

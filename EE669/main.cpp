@@ -27,14 +27,15 @@ int main() {
     cout<<"file size: "<<FileSize(t)<<endl;
     */
     
-    t = "test_SF.txt";
-    cout<<"file size: "<<FileSize(t)<<endl;
+   t = "test_SF.txt";
+    cout<<"raw file size: "<<FileSize(t)<<endl;
     
-    HA_run("test_SF.ah", "-d");
+    HA_run("test_SF.txt","-c");
     t = "test_SF.ah";
-    cout<<"file size: "<<FileSize(t)<<endl;
-    
-
+    cout<<"HA file size: "<<FileSize(t)<<endl;
+    H_run("test_SF.txt");
+    t = "test_SF.txt_H_encode.dat";
+    cout<<"H file size: "<<FileSize(t)<<endl;
     
     return 0;
 }

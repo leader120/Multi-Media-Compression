@@ -17,6 +17,11 @@
  * This code only use 2^8 code for symbol
  */
 
+// removed in store dictionary and offset
+// just for homework, decode can not be used
+// to use decode uncomment line340
+// offset is set in line456
+
 #ifndef Huffman_adp_hpp
 #define Huffman_adp_hpp
 
@@ -277,6 +282,7 @@ namespace vitter {
             return;
         }
         strcpy(temp, do_code);
+        
         if ((*tree)->left != NULL) {
             get_nyt_code(&(*tree)->left, strcat(temp, "0"), &*code_write);
         }
@@ -288,14 +294,18 @@ namespace vitter {
     }
     
     void get_standard_code(unsigned char symbol, std::queue<char> *code_write) {
+        string s;
         for (int i=0; i<8; i++) {
             if ((symbol & 0x80) == 0x80) {
                 (*code_write).push('1');
+                s = s+"1";
             } else {
                 (*code_write).push('0');
+                s = s+"0";
             }
             symbol <<= 1;
         }
+        //cout<<"Symbol first occur encode: "<<s<<endl;
         return;
     }
     
@@ -311,7 +321,7 @@ namespace vitter {
             }
             (*code_write).pop();
         }
-        cout<<"encoded: "<<(int)temp<<endl;
+        //cout<<"encoded: "<<(int)temp<<endl;
         *file << temp;
         return;
     }
@@ -327,14 +337,16 @@ namespace vitter {
             do_code[0] = '\0';
             if (*tree != NULL)
                 get_nyt_code(&*tree, do_code, &*code_write);
-            get_standard_code(symbol, &*code_write);
+            //get_standard_code(symbol, &*code_write);
         }
         // call update procedure
         update(&*tree, symbol, dictionary, &*nyt);
         // write to file
+        //cout<<"buff size: "<<code_write->size()<<endl;
         while ((*code_write).size() >= 8) {
             write_to_file(&*file, &*code_write);
         }
+        //cout<<"buff size after write: "<<code_write->size()<<endl;
         return;
     }
     
@@ -374,7 +386,7 @@ namespace vitter {
     
     void write_to_file_instansly(std::ofstream *file, unsigned char symbol) {
         *file << symbol;
-        cout<<symbol<<endl;
+        //cout<<symbol<<endl;
         return;
     }
     
@@ -425,7 +437,6 @@ namespace vitter {
     bool read_from_file_instansly(std::ifstream *file, unsigned char *symbol) {
         char temp;
         if ((*file).get(temp)) {
-            cout<<"char readed: "<<temp<<endl;
             symbol[0] = temp;
             return true;
         } else {
@@ -442,8 +453,9 @@ namespace vitter {
         unsigned char symbol[1];
         unsigned short offset = 0;
         // initiate file with offset
-        *out << (unsigned char) 0x00;
+       // *out << (unsigned char) 0x00;
         while (read_from_file_instansly(&*in, symbol)) {
+            //cout<<"char readed: "<<symbol[0]<<endl;
             encode(&root, symbol[0], dictionary, &code_write, &*out, &nyt);
         }
         // write to file for offset
