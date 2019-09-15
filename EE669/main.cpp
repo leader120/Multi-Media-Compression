@@ -26,14 +26,15 @@ int main() {
     t = "image.ah";
     cout<<"file size: "<<FileSize(t)<<endl;
     */
-    
+    /*
    t = "test_SF.txt";
     cout<<"raw file size: "<<FileSize(t)<<endl;
     
     HA_run("test_SF.txt","-c");
     t = "test_SF.ah";
     cout<<"HA file size: "<<FileSize(t)<<endl;
-    H_run("test_SF.txt");
+     */
+    HA_run("binary.dat","-c");
     t = "test_SF.txt_H_encode.dat";
     cout<<"H file size: "<<FileSize(t)<<endl;
     

@@ -491,7 +491,6 @@ namespace vitter {
         delete_tree(&root);
         return;
     }
-    
 }
 
 void HA_run(char* name, char* opt) {
@@ -509,7 +508,6 @@ void HA_run(char* name, char* opt) {
         out.open(filename_out, std::ios::out | std::ios::binary);
         vitter::decompress(&in, &out);
     }
-    
 }
 
 
