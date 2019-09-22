@@ -115,7 +115,7 @@ void SF_encode(const vector<unsigned char>& data, map<unsigned char, string> mp,
     file<<(unsigned char)x;
 }
 
-void SF_run(char* name){
+map<unsigned char, string> SF_getDict(const char* name){
     FILE * pFile;
     int c;
     pFile = fopen(name,"rb");
@@ -171,6 +171,11 @@ void SF_run(char* name){
         ct += symbol[i].getFrequency();
     }
     cout<<"Average length: "<<len/ct<<endl;
+    return mp;
+}
+
+void SF_run(const char* name){
+    map<unsigned char, string> mp = SF_getDict(name);
     ifstream f(name, ios_base::binary);
     vector<unsigned char> v((istreambuf_iterator<char>(f)), istreambuf_iterator<char>());
     SF_encode(v, mp, (string)name);

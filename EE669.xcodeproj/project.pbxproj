@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FA29E1842321EB97007857E9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA29E1832321EB97007857E9 /* main.cpp */; };
+		FAB2104F2332E92A00D5243F /* QMcoder_src.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAB2104D2332E92A00D5243F /* QMcoder_src.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,7 +26,16 @@
 /* Begin PBXFileReference section */
 		FA29E1802321EB97007857E9 /* EE669 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EE669; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA29E1832321EB97007857E9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		FAB51D4C2328421D00BA3703 /* Homework1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Homework1; sourceTree = "<group>"; };
+		FA4CC7142336D514006D8AB6 /* CABAC.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CABAC.hpp; sourceTree = "<group>"; };
+		FAB2104D2332E92A00D5243F /* QMcoder_src.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QMcoder_src.cpp; sourceTree = "<group>"; };
+		FAB2104E2332E92A00D5243F /* QMcoder_src.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = QMcoder_src.hpp; sourceTree = "<group>"; };
+		FAB210512332E9BF00D5243F /* ShannonFano.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ShannonFano.hpp; sourceTree = "<group>"; };
+		FAB210522332E9BF00D5243F /* Huffman_adp.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Huffman_adp.hpp; sourceTree = "<group>"; };
+		FAB210532332E9BF00D5243F /* Huffman_GS.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Huffman_GS.hpp; sourceTree = "<group>"; };
+		FAB210542332E9BF00D5243F /* HW1_utli.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = HW1_utli.hpp; sourceTree = "<group>"; };
+		FAB210552332E9BF00D5243F /* EE669HW1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = EE669HW1.pdf; sourceTree = "<group>"; };
+		FAB210572332EA6D00D5243F /* HW2_utli.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = HW2_utli.hpp; sourceTree = "<group>"; };
+		FAE180202334667000AB835B /* BAC.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BAC.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +68,35 @@
 		FA29E1822321EB97007857E9 /* EE669 */ = {
 			isa = PBXGroup;
 			children = (
-				FAB51D4C2328421D00BA3703 /* Homework1 */,
+				FAB210502332E9A800D5243F /* Homework1 */,
+				FAD1C7F423327DA9002A3599 /* Homework2 */,
 				FA29E1832321EB97007857E9 /* main.cpp */,
 			);
 			path = EE669;
+			sourceTree = "<group>";
+		};
+		FAB210502332E9A800D5243F /* Homework1 */ = {
+			isa = PBXGroup;
+			children = (
+				FAB210552332E9BF00D5243F /* EE669HW1.pdf */,
+				FAB210512332E9BF00D5243F /* ShannonFano.hpp */,
+				FAB210532332E9BF00D5243F /* Huffman_GS.hpp */,
+				FAB210522332E9BF00D5243F /* Huffman_adp.hpp */,
+				FAB210542332E9BF00D5243F /* HW1_utli.hpp */,
+			);
+			path = Homework1;
+			sourceTree = "<group>";
+		};
+		FAD1C7F423327DA9002A3599 /* Homework2 */ = {
+			isa = PBXGroup;
+			children = (
+				FAB210572332EA6D00D5243F /* HW2_utli.hpp */,
+				FAB2104E2332E92A00D5243F /* QMcoder_src.hpp */,
+				FAB2104D2332E92A00D5243F /* QMcoder_src.cpp */,
+				FAE180202334667000AB835B /* BAC.hpp */,
+				FA4CC7142336D514006D8AB6 /* CABAC.hpp */,
+			);
+			path = Homework2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA29E1842321EB97007857E9 /* main.cpp in Sources */,
+				FAB2104F2332E92A00D5243F /* QMcoder_src.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

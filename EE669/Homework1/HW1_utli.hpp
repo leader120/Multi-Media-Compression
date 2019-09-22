@@ -60,11 +60,11 @@ void GetStatics(const vector<unsigned char>& data, vector<double>& freq, vector<
     }
 }
 
-int FileSize(char* filename){
+long int FileSize(const char* filename){
     FILE *fp=fopen(filename,"r");
     if(!fp) return -1;
     fseek(fp,0L,SEEK_END);
-    int size = (int) ftell(fp);
+    long int size = ftell(fp);
     fclose(fp);
     return size;
 }
