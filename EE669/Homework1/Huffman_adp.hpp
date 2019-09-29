@@ -2,7 +2,8 @@
 //  Huffman_adp.hpp
 //  EE669
 //
-//  Modified by Alex
+//  Modified by Alex on 2019/9/6.
+//  Copyright © 2019 Alex. All rights reserved.
 //
 // From:
 /*

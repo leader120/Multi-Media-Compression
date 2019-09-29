@@ -81,24 +81,6 @@ void BAC_main(string& in, string& out, unsigned int& A, unsigned int& C, unsigne
     }
 }
 
-map<unsigned char, string> BAC_mapping(const char* name, const string& opt){
-    if(opt == "SF"){
-        return SF_getDict(name);
-    }
-    else if(opt == "H"){
-        ifstream f(name, ios_base::binary);
-        vector<unsigned char> v((istreambuf_iterator<char>(f)), istreambuf_iterator<char>());
-        return H_CodingDict(v);
-    }
-    else if(opt == "BP"){
-        map<unsigned char, string> mp;
-        return mp;
-    }
-    else{
-        exit(0);
-    }
-}
-
 void BAC_run(const char* name, unsigned int A, unsigned int C, int currentState, int MPS, const string& mapping){
     ifstream f(name, ios_base::binary);
     vector<unsigned char> v((istreambuf_iterator<char>(f)), istreambuf_iterator<char>());
@@ -106,10 +88,9 @@ void BAC_run(const char* name, unsigned int A, unsigned int C, int currentState,
     string file_name = name;
     ofstream outfile("./"+file_name+"_BAC_encode.dat");
     long int size = FileSize(name);
-    map<unsigned char, string> mp = BAC_mapping(name, mapping);
+    map<unsigned char, string> mp = myMapping(name, mapping);
     
     unsigned int Qe = BAC_StateTable[currentState][1];
-    
     bool carry = false;
     if(mapping != "BP"){
         for(int i = 0; i < size; ++i){
@@ -117,7 +98,7 @@ void BAC_run(const char* name, unsigned int A, unsigned int C, int currentState,
             //bits += v[i];
             bits = mp[v[i]];
             BAC_main(bits, myOutput, A, C, Qe, currentState, MPS, carry);
-        
+    
             if(myOutput.length() >= 8){
                 outfile<<Bit2Byte(myOutput);
             }
@@ -137,7 +118,6 @@ void BAC_run(const char* name, unsigned int A, unsigned int C, int currentState,
             }
         }
     }
-    
     int x = 0;
     for(int j = 0; j < myOutput.length(); ++j){
         int t = (myOutput[j] == 0) ? 0 : 1;
@@ -145,4 +125,5 @@ void BAC_run(const char* name, unsigned int A, unsigned int C, int currentState,
     }
     outfile<<(char)x;
 }
+
 #endif /* BAC_hpp */

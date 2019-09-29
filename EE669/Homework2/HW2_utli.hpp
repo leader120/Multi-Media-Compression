@@ -47,7 +47,6 @@ string Bytes2Bits(const vector<unsigned char>& data){
 }
 
 string Byte2Bit(const unsigned char& data){
-    string res;
     int t = (int)data;
     string tmp = "";
     while(t > 0){
@@ -57,8 +56,7 @@ string Byte2Bit(const unsigned char& data){
     while(tmp.length() < 8){
         tmp = "0" + tmp;
     }
-    res += tmp;
-    return res;
+    return tmp;
 }
 
 vector<char> Byte2Bit_v(const unsigned char& data){
@@ -79,13 +77,11 @@ string Bit2Byte(string& tmp){
             int t = (tmp[j] == '0') ? 0 : 1;
             x += pow(2,7-j)*t;
         }
-        
         res += (char)x;
         tmp = tmp.substr(8, len-8);
     }
     return res;
 }
-
 
 void toInt16(unsigned int& C){
     while(C >= 65536){
@@ -102,4 +98,28 @@ vector<vector<char>> BitPlane(const char* name){
     }
     return Bits;
 }
+
+vector<vector<char>> BitPlane(vector<unsigned char>& v){
+    vector<vector<char>> Bits;
+    for(int i = 0; i < v.size(); ++i){
+        Bits.push_back(Byte2Bit_v(v[i]));
+    }
+    return Bits;
+}
+
+map<unsigned char, string> myMapping(const char* name, const string& opt){
+    if(opt == "SF"){
+        return SF_getDict(name);
+    }
+    else if(opt == "H"){
+        ifstream f(name, ios_base::binary);
+        vector<unsigned char> v((istreambuf_iterator<char>(f)), istreambuf_iterator<char>());
+        return H_CodingDict(v);
+    }
+    else{
+        map<unsigned char, string> mp;
+        return mp;
+    }
+}
+
 #endif /* HW2_utli_hpp */

@@ -53,11 +53,13 @@ void GetStatics(const vector<unsigned char>& data, vector<double>& freq, vector<
         iter++;
     }
     mySort(freq, dict);
+    /*
     cout<<"Statics of the data: "<<endl;
     cout<<"   "<<"char"<<"  "<<"freq"<<endl;
     for(int i = 0; i < freq.size(); ++i){
         cout<<"    "<<(int)dict[i]<<"    "<<freq[i]<<endl;
     }
+     */
 }
 
 long int FileSize(const char* filename){

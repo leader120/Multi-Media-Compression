@@ -1,3 +1,11 @@
+//
+//  QMcoder_src.cpp
+//  EE669
+//
+//  Modified by Alex on 2019/9/21.
+//  Copyright © 2019 Alex. All rights reserved.
+//
+// From:
 //---------------------------------------------------------------------------
 // FILE:         qmcoder.cpp
 //
@@ -126,25 +134,21 @@ void QM::StartQM(const char *direction){
     }
 }
 
-
 QM::~QM(){
     free(st_table);
     free(mps_table);
 }
 
-
-void
-QM::reset(){
+void QM::reset(){
     for (int i = 0; i < max_context; i++){
         st_table[i] = 0;
         mps_table[i] = 0;
     }
 }
 
-
 void QM::encode(unsigned char symbol, int context ){
-    if (this->debug)
-        cout <<(char) (symbol+'0') << " " << context << endl;
+   // if (this->debug)
+        //cout <<(char) (symbol+'0') << " " << context << endl;
     if (context >= max_context){
         unsigned char *new_st, *new_mps;
         new_st = (unsigned char *) calloc(max_context*2, sizeof(unsigned char));
@@ -169,7 +173,6 @@ void QM::encode(unsigned char symbol, int context ){
     mps_table[context] = next_MPS;
 };
 
-
 void QM::encode(unsigned char symbol, int prob, int mps_symbol ){
     if (this->debug) cout <<(char) (symbol+'0') << " " << prob << endl;
     next_st = cur_st = 0;
@@ -182,7 +185,6 @@ void QM::encode(unsigned char symbol, int prob, int mps_symbol ){
         Code_LPS();
 };
 
-
 void QM::Flush(){
     Clear_final_bits();
     C_register <<= ct ;
@@ -192,8 +194,8 @@ void QM::Flush(){
     QMputc(BP, m_File);
     QMputc(0xff, m_File);count++;
     QMputc(0xff, m_File);count++;
+    cout<<"Compresed file size: "<<count<<endl;
 }
-
 
 unsigned char QM::decode(int context){
     if (context >= max_context){
@@ -218,7 +220,6 @@ unsigned char QM::decode(int context){
     return ret_val;
 };
 
-
 unsigned char QM::decode(int prob, int mps_symbol){
     next_st = cur_st = 0;
     next_MPS = MPS = mps_symbol;
@@ -227,7 +228,6 @@ unsigned char QM::decode(int prob, int mps_symbol){
     if (this->debug) cout <<(char) (ret_val+'0') << " " << prob << endl;
     return ret_val;
 };
-
 
 void QM::Code_LPS(){
     A_interval -= Qe ;
@@ -243,7 +243,6 @@ void QM::Code_LPS(){
     Renorm_e();
 };
 
-
 void QM::Code_MPS(){
     A_interval -= Qe ;
     if (A_interval < 0x8000){
@@ -256,9 +255,7 @@ void QM::Code_MPS(){
     }
 }
 
-
-void
-QM::Renorm_e(){
+void QM::Renorm_e(){
     while (A_interval < 0x8000){
         A_interval <<= 1 ;
         C_register <<= 1 ;
@@ -292,7 +289,6 @@ void QM::Byte_out(){
     C_register &= 0x7ffff;
 }
 
-
 void QM::Output_stacked_zeros(){
     while (sc > 0){
         QMputc(BP, m_File);count++;
@@ -300,7 +296,6 @@ void QM::Output_stacked_zeros(){
         sc--;
     }
 }
-
 
 void QM::Output_stacked_0xffs(){
     while (sc > 0){
@@ -311,7 +306,6 @@ void QM::Output_stacked_0xffs(){
         sc--;
     }
 }
-
 
 void QM::Stuff_0(){
     if(BP == 0xff){
@@ -346,7 +340,6 @@ unsigned char QM::AM_decode_Symbol(){
     return D;
 }
 
-
 unsigned char QM::Cond_LPS_exchange(){
     unsigned char    D;
     unsigned  C_low;
@@ -373,7 +366,6 @@ unsigned char QM::Cond_LPS_exchange(){
     return D;
 }
 
-
 unsigned char QM::Cond_MPS_exchange( ){
     unsigned char    D;
     if (A_interval < Qe){
@@ -390,7 +382,6 @@ unsigned char QM::Cond_MPS_exchange( ){
     return D;
 }
 
-
 void QM::Renorm_d(){
     while (A_interval<0x8000){
         if (ct==0){
@@ -404,7 +395,6 @@ void QM::Renorm_d(){
     Cx = (unsigned) ((C_register & 0xffff0000) >> 16);
 };
 
-
 void QM::Byte_in(){
     unsigned char B;
     B = fgetc(m_File);
@@ -416,7 +406,6 @@ void QM::Byte_in(){
         C_register += (unsigned) B << 8 ;
     }
 };
-
 
 void QM::Unstuff_0(){
     unsigned char B;
@@ -432,7 +421,6 @@ void QM::Unstuff_0(){
         }
     }
 }
-
 
 int QM::Counting(){
     if (ct == 0){

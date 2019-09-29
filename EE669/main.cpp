@@ -18,17 +18,20 @@
 using namespace std;
 
 int main() {
+    char* name = "audio.dat";
+    
+    string opt="BP";
+    name = "image.dat";
 
+    //CABAC_separate(name,2);
     
-    char* name = "test.txt";
-    cout<<FileSize(name)<<endl;
-    name = "test.txt";
-    BAC_run(name, 0x10000, 0x0000, 12, 0, "BP");
-    //CABAC_run(name,3);
-    name = "test.txt_BAC_encode.dat";
-    cout<<"File size    "<<FileSize(name)<<endl;
     
+    CABAC_run(name,6,opt);
+    CABAC_run(name,7,opt);
+    CABAC_run(name,8,opt);
+    CABAC_run(name,9,opt);
+    CABAC_run(name,10,opt);
+     
     return 0;
     
 }
-

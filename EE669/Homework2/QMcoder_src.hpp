@@ -1,3 +1,11 @@
+//
+//  QMcoder_src.hpp
+//  EE669
+//
+//  Modified by Alex on 2019/9/21.
+//  Copyright © 2019 Alex. All rights reserved.
+//
+// From:
 //---------------------------------------------------------------------------
 // FILE:         qmcoder.h
 //
@@ -10,7 +18,7 @@
 //---------------------------------------------------------------------------
 #ifndef QMcoder_src_hpp
 #define QMcoder_src_hpp
-//#include <iostream.h>
+
 #include <iostream>
 #include <stdio.h>
 #include <string.h>

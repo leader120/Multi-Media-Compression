@@ -2,9 +2,26 @@
 //  ShannonFano.hpp
 //  EE669
 //
-//  Created by Alex on 2019/9/6.
+//  Modified by Alex on 2019/9/6.
 //  Copyright © 2019 Alex. All rights reserved.
 //
+// From:
+/*
+ * Compress text file by using Shannon-Fano (No real compression,
+ * just get the 0101 code)
+ *
+ * Author: bonep
+ * Last update: 20120425
+ *
+ * Please free feel to use this code in any way
+ *
+ * Compile:
+ * linux> c++ Shannon_Fano.cpp
+ *
+ * Usage:
+ * linux> ./a.out
+ * (the input text file is hardcoded as text1.txt)
+ */
 
 #ifndef ShannonFano_hpp
 #define ShannonFano_hpp
@@ -163,14 +180,14 @@ map<unsigned char, string> SF_getDict(const char* name){
     map<unsigned char, string> mp;
     double len = 0;
     double ct = 0;
-    cout<<"  char    code"<<endl;
+    //cout<<"  char    code"<<endl;
     for(int i = 0; i < symbol.size(); ++i){
         mp[symbol[i].getSymbol()] = symbol[i].getCode();
-        cout <<"   "<<(int)symbol[i].getSymbol()<<"  "<< symbol[i].getCode() << endl;
+        //cout <<"   "<<(int)symbol[i].getSymbol()<<"  "<< symbol[i].getCode() << endl;
         len += ((int)symbol[i].getCode().length())*symbol[i].getFrequency();
         ct += symbol[i].getFrequency();
     }
-    cout<<"Average length: "<<len/ct<<endl;
+    //cout<<"Average length: "<<len/ct<<endl;
     return mp;
 }
 

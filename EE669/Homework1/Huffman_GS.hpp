@@ -121,7 +121,7 @@ map<unsigned char, string> H_CodingDict(const vector<unsigned char>& data){
     for(int i = 0; i < freq.size(); ++i){
         len += freq[i]*((double)mp[dict[i]].length());
     }
-    cout<<"Average code length: "<<len<<endl;
+    //cout<<"Average code length: "<<len<<endl;
 
     return mp;
 }
