@@ -12,26 +12,60 @@
 #include "Homework1/Huffman_adp.hpp"
 */
 
-#include "Homework2/BAC.hpp"
-#include "Homework2/CABAC.hpp"
+
+#include "Homework3/SQ.hpp"
+#include "Homework3/VQ.hpp"
 
 using namespace std;
 
-int main() {
-    char* name = "audio.dat";
-    
-    string opt="BP";
-    name = "image.dat";
 
-    //CABAC_separate(name,2);
+int main() {
+    /*
+    vector<vector<vector<int>>> tmp = imread("couple.quantized.raw", 256, 256, 1);
+
+    
+    WriteRaw(n, tmp);
+    
+*/
     
     
-    CABAC_run(name,6,opt);
-    CABAC_run(name,7,opt);
-    CABAC_run(name,8,opt);
-    CABAC_run(name,9,opt);
-    CABAC_run(name,10,opt);
+//vector<string> train ={"f16.256","couple.256","elaine.256"};
+//    vector<string> nn = {"moon.256","chem.256","house.256","f16.256","couple.256","elaine.256"};
+    
+vector<string> train ={"chem.256"};
+    
+    
+    VQ_Block_run(train, 4);
+    
+
+    
      
+    
+    
+    
+    
+    /*
+    
+    vector<string> train ={"chem.256","house.256","moon.256"};
+    char n[20] = "tmp_1.raw";
+    
+    vector<string> nn = {"moon.256","chem.256","house.256","f16.256","couple.256","elaine.256"};
+    for(int i = 0; i < 20; ++i){
+        //n[4] = (char)(i+'0');
+        double t = 0;
+        cout<<i<<endl;
+       // for(int j = 0; j < 6; ++j){
+            t += SQ_run(train, nn[0], n, 5, i);
+        t += SQ_run(train, nn[1], n, 5, i);
+        t += SQ_run(train, nn[2], n, 5, i);
+        t /=3;
+        double PSNR(10*log10(255*255/t));
+        cout<<PSNR<<endl;
+      //  }
+      //  cout<<"\\\\"<<endl;;
+    }
+    cout<<endl;
+     */
     return 0;
     
 }

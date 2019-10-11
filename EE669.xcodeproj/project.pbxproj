@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		FA29E1842321EB97007857E9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA29E1832321EB97007857E9 /* main.cpp */; };
 		FAB2104F2332E92A00D5243F /* QMcoder_src.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAB2104D2332E92A00D5243F /* QMcoder_src.cpp */; };
+		FACEB78923454A060060E3F1 /* KMeans.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FACEB78123454A050060E3F1 /* KMeans.cpp */; };
+		FACEB78A23454A060060E3F1 /* HW1Basic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FACEB78323454A060060E3F1 /* HW1Basic.cpp */; };
+		FACEB78B23454A060060E3F1 /* Basic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FACEB78423454A060060E3F1 /* Basic.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,8 +29,10 @@
 /* Begin PBXFileReference section */
 		FA29E1802321EB97007857E9 /* EE669 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EE669; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA29E1832321EB97007857E9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		FA2EB581234932C50003A0FD /* VQ.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VQ.hpp; sourceTree = "<group>"; };
 		FA42B73023403C9900386DF1 /* EE669HW2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = EE669HW2.pdf; sourceTree = "<group>"; };
 		FA4CC7142336D514006D8AB6 /* CABAC.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CABAC.hpp; sourceTree = "<group>"; };
+		FA7620C42350D00300DDD6DF /* ImgBasic.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ImgBasic.hpp; sourceTree = "<group>"; };
 		FAB2104D2332E92A00D5243F /* QMcoder_src.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QMcoder_src.cpp; sourceTree = "<group>"; };
 		FAB2104E2332E92A00D5243F /* QMcoder_src.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = QMcoder_src.hpp; sourceTree = "<group>"; };
 		FAB210512332E9BF00D5243F /* ShannonFano.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ShannonFano.hpp; sourceTree = "<group>"; };
@@ -36,6 +41,16 @@
 		FAB210542332E9BF00D5243F /* HW1_utli.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = HW1_utli.hpp; sourceTree = "<group>"; };
 		FAB210552332E9BF00D5243F /* EE669HW1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = EE669HW1.pdf; sourceTree = "<group>"; };
 		FAB210572332EA6D00D5243F /* HW2_utli.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = HW2_utli.hpp; sourceTree = "<group>"; };
+		FACEB75A234546E50060E3F1 /* SQ.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SQ.hpp; sourceTree = "<group>"; };
+		FACEB7762345487A0060E3F1 /* HW3_utli.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = HW3_utli.hpp; sourceTree = "<group>"; };
+		FACEB77823454A050060E3F1 /* Basic.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Basic.hpp; sourceTree = "<group>"; };
+		FACEB77D23454A050060E3F1 /* core.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = core.hpp; sourceTree = "<group>"; };
+		FACEB77E23454A050060E3F1 /* HW1Basic.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HW1Basic.hpp; sourceTree = "<group>"; };
+		FACEB78023454A050060E3F1 /* KMeans.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KMeans.hpp; sourceTree = "<group>"; };
+		FACEB78123454A050060E3F1 /* KMeans.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMeans.cpp; sourceTree = "<group>"; };
+		FACEB78223454A050060E3F1 /* Matrix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Matrix.hpp; sourceTree = "<group>"; };
+		FACEB78323454A060060E3F1 /* HW1Basic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HW1Basic.cpp; sourceTree = "<group>"; };
+		FACEB78423454A060060E3F1 /* Basic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Basic.cpp; sourceTree = "<group>"; };
 		FAE180202334667000AB835B /* BAC.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BAC.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +95,10 @@
 		FA407BBD23393CD000D4ECB4 /* Homework3 */ = {
 			isa = PBXGroup;
 			children = (
+				FACEB72A2345425A0060E3F1 /* EE569 */,
+				FACEB7762345487A0060E3F1 /* HW3_utli.hpp */,
+				FACEB75A234546E50060E3F1 /* SQ.hpp */,
+				FA2EB581234932C50003A0FD /* VQ.hpp */,
 			);
 			path = Homework3;
 			sourceTree = "<group>";
@@ -94,6 +113,30 @@
 				FAB210542332E9BF00D5243F /* HW1_utli.hpp */,
 			);
 			path = Homework1;
+			sourceTree = "<group>";
+		};
+		FACEB72A2345425A0060E3F1 /* EE569 */ = {
+			isa = PBXGroup;
+			children = (
+				FACEB77D23454A050060E3F1 /* core.hpp */,
+				FACEB77823454A050060E3F1 /* Basic.hpp */,
+				FACEB78423454A060060E3F1 /* Basic.cpp */,
+				FACEB78323454A060060E3F1 /* HW1Basic.cpp */,
+				FACEB77E23454A050060E3F1 /* HW1Basic.hpp */,
+				FA7620C42350D00300DDD6DF /* ImgBasic.hpp */,
+				FACEB77F23454A050060E3F1 /* KMeans */,
+				FACEB78223454A050060E3F1 /* Matrix.hpp */,
+			);
+			path = EE569;
+			sourceTree = "<group>";
+		};
+		FACEB77F23454A050060E3F1 /* KMeans */ = {
+			isa = PBXGroup;
+			children = (
+				FACEB78023454A050060E3F1 /* KMeans.hpp */,
+				FACEB78123454A050060E3F1 /* KMeans.cpp */,
+			);
+			path = KMeans;
 			sourceTree = "<group>";
 		};
 		FAD1C7F423327DA9002A3599 /* Homework2 */ = {
@@ -167,6 +210,9 @@
 			files = (
 				FA29E1842321EB97007857E9 /* main.cpp in Sources */,
 				FAB2104F2332E92A00D5243F /* QMcoder_src.cpp in Sources */,
+				FACEB78A23454A060060E3F1 /* HW1Basic.cpp in Sources */,
+				FACEB78923454A060060E3F1 /* KMeans.cpp in Sources */,
+				FACEB78B23454A060060E3F1 /* Basic.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +334,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/opencv/4.0.1/include/opencv4,
+					/usr/local/include/opencv4,
+					/usr/local/include,
+					"$(SRCROOT)",
+					"$(SRCROOT)/ThirdParty",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"<Multiple",
+					/usr/local/lib,
+					"values>",
+					"$(PROJECT_DIR)/EE669/Homework3/ThirdParty",
+					"$(PROJECT_DIR)/EE669/ThirdParty/OpenCV",
+					"$(PROJECT_DIR)/EE569/ThirdParty",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -296,6 +358,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/opencv/4.0.1/include/opencv4,
+					/usr/local/include/opencv4,
+					/usr/local/include,
+					"$(SRCROOT)",
+					"$(SRCROOT)/ThirdParty",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"<Multiple",
+					"values>",
+					"$(PROJECT_DIR)/EE669/Homework3/ThirdParty",
+					"$(PROJECT_DIR)/EE669/Homework3/ThirdParty/OpenCV",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					/usr/local/lib,
+					"$(PROJECT_DIR)/EE669/Homework3/ThirdParty",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

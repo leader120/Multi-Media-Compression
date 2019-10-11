@@ -338,7 +338,7 @@ namespace vitter {
             do_code[0] = '\0';
             if (*tree != NULL)
                 get_nyt_code(&*tree, do_code, &*code_write);
-            //get_standard_code(symbol, &*code_write);
+                get_standard_code(symbol, &*code_write);
         }
         // call update procedure
         update(&*tree, symbol, dictionary, &*nyt);
@@ -454,7 +454,7 @@ namespace vitter {
         unsigned char symbol[1];
         unsigned short offset = 0;
         // initiate file with offset
-       // *out << (unsigned char) 0x00;
+        out << (unsigned char) 0x00;
         while (read_from_file_instansly(&*in, symbol)) {
             //cout<<"char readed: "<<symbol[0]<<endl;
             encode(&root, symbol[0], dictionary, &code_write, &*out, &nyt);

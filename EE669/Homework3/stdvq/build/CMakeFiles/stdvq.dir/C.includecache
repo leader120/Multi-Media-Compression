@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/stdvq.c
+stdio.h
+-
+string.h
+-
+math.h
+-
+vq.h
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/vq.h
+stdvq.h
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/stdvq.h
+
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/stdvq.h
+
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/vq.h
+

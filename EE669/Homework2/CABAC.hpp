@@ -108,7 +108,7 @@ void CABAC_run(const char* name, int contextbits, const string mapping){
     coder.Flush();
 }
 
-void CABAC_run_A(const char* name, int contextbits, int block){
+void CABAC_A_run(const char* name, int contextbits, int block){
     vector<int> contextlist(contextbits,0);
     FILE *f;
     char *output=new char[64];

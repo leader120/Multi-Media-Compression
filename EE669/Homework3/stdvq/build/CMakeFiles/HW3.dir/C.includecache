@@ -1,0 +1,70 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/lloyd0.c
+stdio.h
+-
+string.h
+-
+math.h
+-
+vq.h
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/vq.h
+stdvq.def
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/stdvq.def
+stdvq.h
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/stdvq.h
+
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/lloyd1.c
+stdio.h
+-
+string.h
+-
+math.h
+-
+vq.h
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/vq.h
+stdvq.def
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/stdvq.def
+stdvq.h
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/stdvq.h
+
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/lloyd2.c
+stdio.h
+-
+string.h
+-
+math.h
+-
+vq.h
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/vq.h
+stdvq.def
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/stdvq.def
+stdvq.h
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/stdvq.h
+
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/stdvq.def
+
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/stdvq.h
+
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/stdvq_util.c
+stdio.h
+-
+string.h
+-
+math.h
+-
+vq.h
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/vq.h
+stdvq.def
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/stdvq.def
+stdvq.h
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/stdvq.h
+
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/vq.h
+

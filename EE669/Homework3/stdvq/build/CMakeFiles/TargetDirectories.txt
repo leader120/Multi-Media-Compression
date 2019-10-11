@@ -1,0 +1,6 @@
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/build/CMakeFiles/rebuild_cache.dir
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/build/CMakeFiles/edit_cache.dir
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/build/CMakeFiles/voronoi_fs.dir
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/build/CMakeFiles/stdvqe.dir
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/build/CMakeFiles/stdvq.dir
+/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/EE669/EE669/Homework3/stdvq/build/CMakeFiles/HW3.dir
