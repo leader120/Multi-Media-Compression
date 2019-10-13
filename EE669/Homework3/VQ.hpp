@@ -63,7 +63,6 @@ void VQ_Block_run(vector<string>& train, const int block){
         for(int j = 0; j < x_train[0].size(); ++j){
             ofile<<(unsigned char)x_train[i][j];
         }
-        ofile<<endl;
     }
     ofile.close();
 }

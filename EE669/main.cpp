@@ -32,10 +32,10 @@ int main() {
 //vector<string> train ={"f16.256","couple.256","elaine.256"};
 //    vector<string> nn = {"moon.256","chem.256","house.256","f16.256","couple.256","elaine.256"};
     
-vector<string> train ={"chem.256"};
+vector<string> train ={"couple.256"};
     
     
-    VQ_Block_run(train, 4);
+    VQ_Block_run(train, 2);
     
 
     
