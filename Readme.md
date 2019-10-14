@@ -66,7 +66,7 @@ Standarder VQ use code in sub-floder `stdvd`, use following to install:
     make
     cd ..
 
-Tree structured VQ in sub-floder `tsvq` which include a single main function. Provided code is modied into one single head file due to some bugs from global variables used in original code.
+Tree structured VQ in sub-floder `tsvq` which include two main function in `tsvq.c` and `tsvqe.c` (one for training, one for testing). Provided code is modied into one single head file due to some bugs from global variables used in original code.
 
 
 

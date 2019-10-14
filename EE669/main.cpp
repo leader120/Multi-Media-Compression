@@ -39,10 +39,6 @@ vector<string> train ={"couple.256"};
     
 
     
-     
-    
-    
-    
     
     /*
     
