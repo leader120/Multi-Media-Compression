@@ -9,43 +9,7 @@
 #ifndef HW3_utli_hpp
 #define HW3_utli_hpp
 
-#include "EE569/HW1Basic.hpp"
-
-vector<vector<vector<int>>> imread(const string& name, const int H, const int W, const int K){
-    ifstream f(name, ios_base::binary);
-    vector<unsigned char> v((istreambuf_iterator<char>(f)), istreambuf_iterator<char>());
-    vector<vector<vector<int>>> data(K, vector<vector<int>>(H, vector<int>(W, 0)));
-    for(int i = 0, h = 0, w = 0; i < v.size(); ++i){
-        data[0][h][w] = (unsigned int)v[i];
-        ++w;
-        if(w == W){
-            w = 0;
-            ++h;
-        }
-        if(h == H){
-            break;
-        }
-    }
-    return data;
-}
-
-vector<vector<vector<double>>> imread_d(const string& name, const int H, const int W, const int K){
-    ifstream f(name, ios_base::binary);
-    vector<unsigned char> v((istreambuf_iterator<char>(f)), istreambuf_iterator<char>());
-    vector<vector<vector<double>>> data(K, vector<vector<double>>(H, vector<double>(W, 0)));
-    for(int i = 0, h = 0, w = 0; i < v.size(); ++i){
-        data[0][h][w] = (unsigned int)v[i];
-        ++w;
-        if(w == W){
-            w = 0;
-            ++h;
-        }
-        if(h == H){
-            break;
-        }
-    }
-    return data;
-}
+#include "utli.hpp"
 
 vector<vector<double>> imread(const string& name){
     ifstream f(name, ios_base::binary);

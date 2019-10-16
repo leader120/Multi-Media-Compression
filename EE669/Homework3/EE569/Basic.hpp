@@ -19,7 +19,7 @@
 #include "Matrix.hpp"
 #include "ImgBasic.hpp"
 
-//#include "Evaluate/Evaluate.hpp"
+#include "Evaluate/Evaluate.hpp"
 //#include "BinaryTree/BinaryTree.hpp"
 #include "KMeans/KMeans.hpp"
 

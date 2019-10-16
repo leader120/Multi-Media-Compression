@@ -6,62 +6,61 @@
 //  Copyright © 2019 Alex. All rights reserved.
 //
 
-/*
+
 #include "Homework1/ShannonFano.hpp"
 #include "Homework1/Huffman_GS.hpp"
 #include "Homework1/Huffman_adp.hpp"
-*/
-
-
+#include "Homework2/BAC.hpp"
+#include "Homework2/CABAC.hpp"
 #include "Homework3/SQ.hpp"
 #include "Homework3/VQ.hpp"
 
+#include "Homework4/JPEG.hpp"
+
 using namespace std;
 
+void print(vector<vector<vector<double>>>& res){
+    for(int i = 0; i < res.size(); ++i){
+        cout<<endl;
+        cout<<"Q "<<i<<endl;
+        for(int p = 0; p < res[0].size(); ++p){
+            for(int q = 0; q < res[1].size(); ++q){
+                printf("%12f   ",res[i][p][q]);
+            }
+            cout<<endl;
+        }
+    }
+    cout<<endl;
+}
 
 int main() {
     /*
-    vector<vector<vector<int>>> tmp = imread("couple.quantized.raw", 256, 256, 1);
-
+    vector<vector<vector<double>>> data = imread_d("camera_man.raw", 16, 16, 1);
+    WriteRaw(str2pchar(to_string(7)+".raw"), data);
+    vector<vector<vector<double>>> data8x8 = block2D(data[0], 8);
+    vector<vector<vector<int>>> res;
+    for(int i = 0; i < data8x8.size(); ++i){
+        res.push_back(QuantizedDCT(data8x8[i]));
+        WriteRaw(str2pchar(to_string(i)+".raw"), data8x8[i]);
+    }
     
-    WriteRaw(n, tmp);
-    
+    vector<vector<vector<double>>> res1;
+    res1.push_back(GenerateQ(10));
+    res1.push_back(GenerateQ(90));
+    print(res1);
 */
     
-    
-//vector<string> train ={"f16.256","couple.256","elaine.256"};
-//    vector<string> nn = {"moon.256","chem.256","house.256","f16.256","couple.256","elaine.256"};
-    
-vector<string> train ={"couple.256"};
-    
-    
-    VQ_Block_run(train, 2);
-    
-
-    
-    
-    /*
-    
-    vector<string> train ={"chem.256","house.256","moon.256"};
-    char n[20] = "tmp_1.raw";
-    
-    vector<string> nn = {"moon.256","chem.256","house.256","f16.256","couple.256","elaine.256"};
-    for(int i = 0; i < 20; ++i){
-        //n[4] = (char)(i+'0');
-        double t = 0;
+    for(int i = 1; i < 6; ++i){
+        string name = "jelly_beans";
+        int H = 256;
+        int K = 3;
+        vector<vector<vector<double>>> data = imread_d(name+to_string(i)+".raw", K, H, H);
+        vector<vector<vector<double>>> res = Deblocking_A(data);
+        WriteRaw(str2pchar(name+to_string(i)+"_deblock.raw"), res);
         cout<<i<<endl;
-       // for(int j = 0; j < 6; ++j){
-            t += SQ_run(train, nn[0], n, 5, i);
-        t += SQ_run(train, nn[1], n, 5, i);
-        t += SQ_run(train, nn[2], n, 5, i);
-        t /=3;
-        double PSNR(10*log10(255*255/t));
-        cout<<PSNR<<endl;
-      //  }
-      //  cout<<"\\\\"<<endl;;
+        calPSNR(str2pchar(name+".raw"), str2pchar(name+to_string(i)+"_deblock.raw"), K, H, H);
+        calSSIM(str2pchar(name+".raw"), str2pchar(name+to_string(i)+"_deblock.raw"), K, H, H);
     }
-    cout<<endl;
-     */
     return 0;
     
 }

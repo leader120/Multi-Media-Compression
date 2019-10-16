@@ -12,7 +12,7 @@
 #include "HW3_utli.hpp"
 
 vector<vector<double>> imread_block(const string& name, const int H, const int W, const int block){
-    vector<vector<vector<int>>> Im3D = imread(name, H, W, 1);
+    vector<vector<vector<int>>> Im3D = imread(name, 1, H, W);
     vector<vector<double>> res;
     int n = H / block;
     int m = W / block;
@@ -68,7 +68,7 @@ void VQ_Block_run(vector<string>& train, const int block){
 }
 
 void VQ_Deblock_run(string& name, string& save, const int block){
-    vector<vector<vector<double>>> tmp = imread_d(name, 65536/(block*block), block*block, 1);
+    vector<vector<vector<double>>> tmp = imread_d(name, 1, 65536/(block*block), block*block);
     vector<vector<double>> res = imwrite_block(tmp[0], 256, 256, block);
     WriteRaw(str2pchar(save), res);
 }

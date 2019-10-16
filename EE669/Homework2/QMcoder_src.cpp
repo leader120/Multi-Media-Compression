@@ -268,7 +268,7 @@ void QM::Renorm_e(){
 }
 
 void QM::Byte_out(){
-    unsigned t = C_register>>19;
+    unsigned t = (unsigned)C_register>>19;
     if (t > 0xff){
         BP++;
         Stuff_0();

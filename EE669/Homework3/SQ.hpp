@@ -12,7 +12,7 @@
 #include "HW3_utli.hpp"
 
 void Histgram(const string& name,  const char* save, const int H, const int W, const int K){
-    vector<vector<vector<int>>> Im3D = imread(name, H, W, K);
+    vector<vector<vector<int>>> Im3D = imread(name, K, H, W);
     WriteRaw("tmp.raw", Im3D);
     double S (H * W);
     S = 255/S;

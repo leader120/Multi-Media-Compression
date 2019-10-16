@@ -12,6 +12,7 @@
 		FACEB78923454A060060E3F1 /* KMeans.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FACEB78123454A050060E3F1 /* KMeans.cpp */; };
 		FACEB78A23454A060060E3F1 /* HW1Basic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FACEB78323454A060060E3F1 /* HW1Basic.cpp */; };
 		FACEB78B23454A060060E3F1 /* Basic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FACEB78423454A060060E3F1 /* Basic.cpp */; };
+		FAEF2E5F235538FA00CE489F /* Evaluate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAEF2E5E235538FA00CE489F /* Evaluate.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +53,10 @@
 		FACEB78323454A060060E3F1 /* HW1Basic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HW1Basic.cpp; sourceTree = "<group>"; };
 		FACEB78423454A060060E3F1 /* Basic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Basic.cpp; sourceTree = "<group>"; };
 		FAE180202334667000AB835B /* BAC.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BAC.hpp; sourceTree = "<group>"; };
+		FAEF2E5D235538FA00CE489F /* Evaluate.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Evaluate.hpp; sourceTree = "<group>"; };
+		FAEF2E5E235538FA00CE489F /* Evaluate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Evaluate.cpp; sourceTree = "<group>"; };
+		FAF572312354E2C40033D779 /* utli.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = utli.hpp; sourceTree = "<group>"; };
+		FAF572372354F11B0033D779 /* JPEG.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = JPEG.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,9 +89,11 @@
 		FA29E1822321EB97007857E9 /* EE669 */ = {
 			isa = PBXGroup;
 			children = (
+				FAF572312354E2C40033D779 /* utli.hpp */,
 				FAB210502332E9A800D5243F /* Homework1 */,
 				FAD1C7F423327DA9002A3599 /* Homework2 */,
 				FA407BBD23393CD000D4ECB4 /* Homework3 */,
+				FAF572362354F11B0033D779 /* Homework4 */,
 				FA29E1832321EB97007857E9 /* main.cpp */,
 			);
 			path = EE669;
@@ -118,6 +125,7 @@
 		FACEB72A2345425A0060E3F1 /* EE569 */ = {
 			isa = PBXGroup;
 			children = (
+				FAEF2E5C235538FA00CE489F /* Evaluate */,
 				FACEB77D23454A050060E3F1 /* core.hpp */,
 				FACEB77823454A050060E3F1 /* Basic.hpp */,
 				FACEB78423454A060060E3F1 /* Basic.cpp */,
@@ -152,6 +160,24 @@
 			path = Homework2;
 			sourceTree = "<group>";
 		};
+		FAEF2E5C235538FA00CE489F /* Evaluate */ = {
+			isa = PBXGroup;
+			children = (
+				FAEF2E5D235538FA00CE489F /* Evaluate.hpp */,
+				FAEF2E5E235538FA00CE489F /* Evaluate.cpp */,
+			);
+			path = Evaluate;
+			sourceTree = "<group>";
+		};
+		FAF572362354F11B0033D779 /* Homework4 */ = {
+			isa = PBXGroup;
+			children = (
+				FAF572372354F11B0033D779 /* JPEG.hpp */,
+			);
+			name = Homework4;
+			path = EE669/Homework4;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -178,7 +204,7 @@
 		FA29E1782321EB97007857E9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1030;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = Alex;
 				TargetAttributes = {
 					FA29E17F2321EB97007857E9 = {
@@ -192,6 +218,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = FA29E1772321EB96007857E9;
 			productRefGroup = FA29E1812321EB97007857E9 /* Products */;
@@ -210,6 +237,7 @@
 			files = (
 				FA29E1842321EB97007857E9 /* main.cpp in Sources */,
 				FAB2104F2332E92A00D5243F /* QMcoder_src.cpp in Sources */,
+				FAEF2E5F235538FA00CE489F /* Evaluate.cpp in Sources */,
 				FACEB78A23454A060060E3F1 /* HW1Basic.cpp in Sources */,
 				FACEB78923454A060060E3F1 /* KMeans.cpp in Sources */,
 				FACEB78B23454A060060E3F1 /* Basic.cpp in Sources */,
@@ -333,6 +361,7 @@
 		FA29E1882321EB97007857E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = (
 					/usr/local/Cellar/opencv/4.0.1/include/opencv4,
@@ -348,6 +377,7 @@
 					"$(PROJECT_DIR)/EE669/Homework3/ThirdParty",
 					"$(PROJECT_DIR)/EE669/ThirdParty/OpenCV",
 					"$(PROJECT_DIR)/EE569/ThirdParty",
+					"$(PROJECT_DIR)/EE669/Homework3/stdvq/lib",
 				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -357,6 +387,7 @@
 		FA29E1892321EB97007857E9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = (
 					/usr/local/Cellar/opencv/4.0.1/include/opencv4,
@@ -370,6 +401,7 @@
 					"values>",
 					"$(PROJECT_DIR)/EE669/Homework3/ThirdParty",
 					"$(PROJECT_DIR)/EE669/Homework3/ThirdParty/OpenCV",
+					"$(PROJECT_DIR)/EE669/Homework3/stdvq/lib",
 				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = (
 					/usr/local/lib,
