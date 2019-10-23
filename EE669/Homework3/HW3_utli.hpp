@@ -97,4 +97,5 @@ double calPSNR(C_Vec2_d& orgImg, C_Vec2_d& proImg){
     cout<<"PSNR: "<<PSNR<<endl;
     return MSE;
 }
+
 #endif /* HW3_utli_hpp */

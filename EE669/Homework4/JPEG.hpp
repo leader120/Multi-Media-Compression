@@ -89,8 +89,8 @@ vector<vector<double>> DCT(const vector<vector<double>>& data){
     return res;
 }
 
-vector<vector<int>> QuantizedDCT(const vector<vector<double>>& data){
-    vector<vector<double>> qdct = EWDivide(DCT(data), Q50);
+vector<vector<int>> QuantizedDCT(const vector<vector<double>>& data, int Q){
+    vector<vector<double>> qdct = EWDivide(DCT(data), GenerateQ(Q));
     vector<vector<int>> res (data.size(), vector<int>(data[0].size(), 0));
     for(int i = 0; i < data.size(); ++i){
         for(int j = 0; j < data[0].size(); ++j){
@@ -154,11 +154,34 @@ vector<vector<vector<double>>> Deblocking_A(const vector<vector<vector<double>>>
     return res;
 }
 
-void run_Deblocking_A(string name, int H, int W, int K){
+void Deblocking_A_run(string name, int H, int W, int K){
     vector<vector<vector<double>>> data = imread_d(name + ".raw", K, H, W);
     vector<vector<vector<double>>> res = Deblocking_A(data);
     WriteRaw(str2pchar(name+"_deblock.raw"), res);
     calPSNR(str2pchar(name+".raw"), str2pchar(name+"_deblock.raw"), K, H, W);
     calSSIM(str2pchar(name+".raw"), str2pchar(name+"_deblock.raw"), K, H, W);
 }
+
+vector<vector<vector<double>>> ZeroPadding(vector<vector<vector<double>>>& data, vector<int> pad){
+    vector<vector<vector<double>>> res(data);
+    for(int k = 0; k < data.size(); ++k){
+        for(int i = 0; i < data[0].size(); ++i){
+            for(int p = 0; p < pad[0]; ++p){
+                res[k][i].insert(res[k][i].begin(), 0);
+            }
+            for(int p = 0; p < pad[1]; ++p){
+                res[k][i].push_back(0);
+            }
+        }
+        vector<double> tmp(res[k][0].size(), 0);
+        for(int p = 0; p < pad[2]; ++p){
+            res[k].insert(res[k].begin(), tmp);
+        }
+        for(int p = 0; p < pad[3]; ++p){
+            res[k].push_back(tmp);
+        }
+    }
+    return res;
+}
+
 #endif /* JPEG_hpp */

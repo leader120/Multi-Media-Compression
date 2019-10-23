@@ -25,7 +25,20 @@ void print(vector<vector<vector<double>>>& res){
         cout<<"Q "<<i<<endl;
         for(int p = 0; p < res[0].size(); ++p){
             for(int q = 0; q < res[1].size(); ++q){
-                printf("%12f   ",res[i][p][q]);
+                printf("%5f   ",res[i][p][q]);
+            }
+            cout<<endl;
+        }
+    }
+    cout<<endl;
+}
+void print(vector<vector<vector<int>>>& res){
+    for(int i = 0; i < res.size(); ++i){
+        cout<<endl;
+        cout<<" Block "<<i<<endl;
+        for(int p = 0; p < res[0].size(); ++p){
+            for(int q = 0; q < res[1].size(); ++q){
+                printf(" %4d",res[i][p][q]);
             }
             cout<<endl;
         }
@@ -34,33 +47,33 @@ void print(vector<vector<vector<double>>>& res){
 }
 
 int main() {
-    /*
-    vector<vector<vector<double>>> data = imread_d("camera_man.raw", 16, 16, 1);
+    
+    vector<vector<vector<double>>> data = imread_d("camera_man.raw", 1, 16, 16);
     WriteRaw(str2pchar(to_string(7)+".raw"), data);
     vector<vector<vector<double>>> data8x8 = block2D(data[0], 8);
     vector<vector<vector<int>>> res;
+    
     for(int i = 0; i < data8x8.size(); ++i){
-        res.push_back(QuantizedDCT(data8x8[i]));
+        res.push_back(QuantizedDCT(data8x8[i],10));
         WriteRaw(str2pchar(to_string(i)+".raw"), data8x8[i]);
     }
-    
+    print(res);
     vector<vector<vector<double>>> res1;
     res1.push_back(GenerateQ(10));
     res1.push_back(GenerateQ(90));
-    print(res1);
-*/
     
-    for(int i = 1; i < 6; ++i){
-        string name = "jelly_beans";
-        int H = 256;
-        int K = 3;
-        vector<vector<vector<double>>> data = imread_d(name+to_string(i)+".raw", K, H, H);
-        vector<vector<vector<double>>> res = Deblocking_A(data);
-        WriteRaw(str2pchar(name+to_string(i)+"_deblock.raw"), res);
-        cout<<i<<endl;
-        calPSNR(str2pchar(name+".raw"), str2pchar(name+to_string(i)+"_deblock.raw"), K, H, H);
-        calSSIM(str2pchar(name+".raw"), str2pchar(name+to_string(i)+"_deblock.raw"), K, H, H);
+
+    /*
+    string name = "boat";
+    int H = 512;
+    int W = 512;
+    int K = 3;
+    for(int k = 1; k < 6; ++k){
+        vector<vector<vector<double>>> data = imread_d(name+to_string(k)+".raw", 3, H, W);
+        WriteRaw(str2pchar(name+to_string(k)+"_deblock.raw"),data[0]);
+        calPSNR(str2pchar(name+".raw"), str2pchar(name+to_string(k)+"_deblock.raw"), K, H, W);
+        calSSIM(str2pchar(name+".raw"), str2pchar(name+to_string(k)+"_deblock.raw"), K, H, W);
     }
+    */
     return 0;
-    
 }

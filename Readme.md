@@ -94,4 +94,7 @@ Run it use:
     ./djpeg ".jpg">".raw"
     -> change ".jpg" to raw data and save it to ".raw"
 
+Deblocking use filtering:
+
+    void Deblocking_A_run(string name, int H, int W, int K)
 
