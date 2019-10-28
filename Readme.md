@@ -81,7 +81,7 @@ DCT, Quantized DCT and Quantized Factor generator in `JPEG.hpp`:
 
     N -> quality factor
 
-JPEG compression use provided code in `jpeg-6b`. Install it in `Linux` use:
+JPEG compression use provided code in `jpeg-6b`. Install it in `Linux` or `MacOS` use:
 
     ./configure
     make

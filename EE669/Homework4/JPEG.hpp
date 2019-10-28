@@ -131,7 +131,7 @@ vector<vector<vector<double>>> Deblocking_A(const vector<vector<vector<double>>>
     for(int k = 0; k < data.size(); ++k){
         for(int i = 8; i < data[0].size()-8; ++i){
             for(int j = 8; j < data[0][0].size()-8; ++j){
-                int t1 =1,t2=2;
+                int t1 = 1,t2 = 2;
                 int w = 2;
                 
                 if(i % 8 == 0 && j % 8 == 0){

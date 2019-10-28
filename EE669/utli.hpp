@@ -9,7 +9,7 @@
 #ifndef utli_hpp
 #define utli_hpp
 
-#define pi 3.2415926
+#define pi 3.1415926
 #include "Homework3/EE569/HW1Basic.hpp"
 
 vector<vector<vector<int>>> imread(const string& name, const int K, const int H, const int W){
