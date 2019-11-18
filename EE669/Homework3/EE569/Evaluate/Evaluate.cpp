@@ -53,6 +53,7 @@ double calPSNR(C_Vec3_ui8& orgImg, C_Vec3_ui8& proImg){
             }
         }
     }
+    cout<<"MSE: "<<MSE/(H*W)<<endl;
     MSE /= (Sq(255)*K);
     double m(H*W);
     double PSNR(10*log10(m/MSE));
@@ -72,7 +73,7 @@ double calSSIM(C_Vec3_ui8& orgImg, C_Vec3_ui8& proImg){
     int W(Dim3(orgImg));
     double muX(0), muY(0);
     double sigX2(0), sigY2(0), sigXY2(0);
-    double s(H*W);
+    double s(H*W*K);
     for(int k(0); k < K; ++k){
         for(int i(0); i < H; ++i){
             for(int j(0); j < W; ++j){

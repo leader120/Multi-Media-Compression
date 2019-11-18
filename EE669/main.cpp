@@ -67,17 +67,16 @@ int main() {
 
     
     string name = "boat";
-    int H = 512;
-    int W = H;
+    int H = 768;
+    int W = 512;
 
-    int K = 3;
-    vector<int> tmmp = {100,60,40,20,10,1};
-    for(int k = 1; k < 6; ++k){
-        vector<vector<vector<double>>> data = imread_d(name+to_string(k)+"_deblocking.raw", 3, H, W);
-        WriteRaw(str2pchar(name+to_string(k)+"_deblocking.raw"),data[0]);
-        //calPSNR(str2pchar(name+".raw"), str2pchar(name+to_string(k)+"_deblock.raw"), K, H, W);
-        //calSSIM(str2pchar(name+".raw"), str2pchar(name+to_string(k)+"_deblock.raw"), K, H, W);
-    }
+    int K = 1;
+// for(int k = 1; k <= 10; ++k){
+        name = "buildings";
+        calPSNR(str2pchar(name+"_ori.raw"), str2pchar(name+"_jpg.raw"), K, H, W);
+        calSSIM(str2pchar(name+"_ori.raw"), str2pchar(name+"_jpg.raw"), K, H, W);
+        cout<<endl;
+//   }
     
     return 0;
 }

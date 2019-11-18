@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA29E1842321EB97007857E9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA29E1832321EB97007857E9 /* main.cpp */; };
 		FAB2104F2332E92A00D5243F /* QMcoder_src.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAB2104D2332E92A00D5243F /* QMcoder_src.cpp */; };
 		FACEB78923454A060060E3F1 /* KMeans.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FACEB78123454A050060E3F1 /* KMeans.cpp */; };
 		FACEB78A23454A060060E3F1 /* HW1Basic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FACEB78323454A060060E3F1 /* HW1Basic.cpp */; };
 		FACEB78B23454A060060E3F1 /* Basic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FACEB78423454A060060E3F1 /* Basic.cpp */; };
+		FAD70933237B982A00DB0BD2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA29E1832321EB97007857E9 /* main.cpp */; };
 		FAEF2E5F235538FA00CE489F /* Evaluate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAEF2E5E235538FA00CE489F /* Evaluate.cpp */; };
 /* End PBXBuildFile section */
 
@@ -235,9 +235,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA29E1842321EB97007857E9 /* main.cpp in Sources */,
 				FAB2104F2332E92A00D5243F /* QMcoder_src.cpp in Sources */,
 				FAEF2E5F235538FA00CE489F /* Evaluate.cpp in Sources */,
+				FAD70933237B982A00DB0BD2 /* main.cpp in Sources */,
 				FACEB78A23454A060060E3F1 /* HW1Basic.cpp in Sources */,
 				FACEB78923454A060060E3F1 /* KMeans.cpp in Sources */,
 				FACEB78B23454A060060E3F1 /* Basic.cpp in Sources */,
