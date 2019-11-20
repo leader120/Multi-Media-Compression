@@ -33,8 +33,4 @@ target_link_libraries(stdvqe
 	HW3 
 )
 
-add_executable( voronoi_fs voronoi_fs.c )
-target_link_libraries(voronoi_fs 
-	HW3 
-)
 

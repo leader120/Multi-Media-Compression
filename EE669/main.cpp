@@ -32,6 +32,7 @@ void print(vector<vector<vector<double>>>& res){
     }
     cout<<endl;
 }
+
 void print(vector<vector<vector<int>>>& res){
     for(int i = 0; i < res.size(); ++i){
         cout<<endl;
