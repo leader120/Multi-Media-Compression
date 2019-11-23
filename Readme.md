@@ -129,6 +129,7 @@ brew install pkg-config
 In `ffmpeg` folder, same as Homework5.
 ```
 ./configure --enable-libvmaf --enable-version3
+make
 ```
 Run it using 
 ```

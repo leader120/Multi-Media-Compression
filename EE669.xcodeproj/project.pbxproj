@@ -34,6 +34,12 @@
 		FA42B73023403C9900386DF1 /* EE669HW2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = EE669HW2.pdf; sourceTree = "<group>"; };
 		FA4CC7142336D514006D8AB6 /* CABAC.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CABAC.hpp; sourceTree = "<group>"; };
 		FA7620C42350D00300DDD6DF /* ImgBasic.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ImgBasic.hpp; sourceTree = "<group>"; };
+		FA92B55D2389D50600B5E6C2 /* readraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = readraw.m; sourceTree = "<group>"; };
+		FA92B55E2389D50600B5E6C2 /* EE669HW6.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = EE669HW6.pdf; sourceTree = "<group>"; };
+		FA92B55F2389D50600B5E6C2 /* ssim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ssim.m; sourceTree = "<group>"; };
+		FA92B5612389D50600B5E6C2 /* EE669HW5.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = EE669HW5.pdf; sourceTree = "<group>"; };
+		FA92B5642389D53400B5E6C2 /* EE669HW4.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = EE669HW4.pdf; sourceTree = "<group>"; };
+		FA92B5652389D53E00B5E6C2 /* EE669HW3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = EE669HW3.pdf; sourceTree = "<group>"; };
 		FAB2104D2332E92A00D5243F /* QMcoder_src.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QMcoder_src.cpp; sourceTree = "<group>"; };
 		FAB2104E2332E92A00D5243F /* QMcoder_src.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = QMcoder_src.hpp; sourceTree = "<group>"; };
 		FAB210512332E9BF00D5243F /* ShannonFano.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ShannonFano.hpp; sourceTree = "<group>"; };
@@ -94,6 +100,8 @@
 				FAD1C7F423327DA9002A3599 /* Homework2 */,
 				FA407BBD23393CD000D4ECB4 /* Homework3 */,
 				FAF572362354F11B0033D779 /* Homework4 */,
+				FA92B5602389D50600B5E6C2 /* Homework5 */,
+				FA92B55C2389D50600B5E6C2 /* Homework6 */,
 				FA29E1832321EB97007857E9 /* main.cpp */,
 			);
 			path = EE669;
@@ -102,6 +110,7 @@
 		FA407BBD23393CD000D4ECB4 /* Homework3 */ = {
 			isa = PBXGroup;
 			children = (
+				FA92B5652389D53E00B5E6C2 /* EE669HW3.pdf */,
 				FACEB72A2345425A0060E3F1 /* EE569 */,
 				FACEB7762345487A0060E3F1 /* HW3_utli.hpp */,
 				FACEB75A234546E50060E3F1 /* SQ.hpp */,
@@ -109,6 +118,26 @@
 			);
 			path = Homework3;
 			sourceTree = "<group>";
+		};
+		FA92B55C2389D50600B5E6C2 /* Homework6 */ = {
+			isa = PBXGroup;
+			children = (
+				FA92B55D2389D50600B5E6C2 /* readraw.m */,
+				FA92B55E2389D50600B5E6C2 /* EE669HW6.pdf */,
+				FA92B55F2389D50600B5E6C2 /* ssim.m */,
+			);
+			name = Homework6;
+			path = EE669/Homework6;
+			sourceTree = SOURCE_ROOT;
+		};
+		FA92B5602389D50600B5E6C2 /* Homework5 */ = {
+			isa = PBXGroup;
+			children = (
+				FA92B5612389D50600B5E6C2 /* EE669HW5.pdf */,
+			);
+			name = Homework5;
+			path = EE669/Homework5;
+			sourceTree = SOURCE_ROOT;
 		};
 		FAB210502332E9A800D5243F /* Homework1 */ = {
 			isa = PBXGroup;
@@ -173,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				FAF572372354F11B0033D779 /* JPEG.hpp */,
+				FA92B5642389D53400B5E6C2 /* EE669HW4.pdf */,
 			);
 			name = Homework4;
 			path = EE669/Homework4;
