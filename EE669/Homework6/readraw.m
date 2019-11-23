@@ -1,5 +1,5 @@
 
-function [image] = readraw1(filename, H, W)
+function [image] = readraw(filename, H, W)
 f1 = fopen(filename, 'r');
 data = fread(f1, 'uint8');
 fclose(f1);
